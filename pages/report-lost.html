@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Lost Item — Campus Lost &amp; Found</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="report-lost">
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="form-card">
+        <div class="page-header">
+          <div>
+            <h1 class="page-title">Report a Lost Item</h1>
+            <p class="page-subtitle">Fill in details about your missing item so the campus community can help find it.</p>
+          </div>
+          <a href="./report-found.html" class="btn btn-secondary btn-sm">Found something instead?</a>
+        </div>
+
+        <div class="card">
+          <div id="form-alert-box"></div>
+          <form id="report-item-form" novalidate>
+            <div class="form-grid-2" style="margin-bottom:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="item-name">Item Name <span class="required-mark">*</span></label>
+                <input type="text" id="item-name" class="form-control" required placeholder="e.g. Black Leather Wallet">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="item-category">Category <span class="required-mark">*</span></label>
+                <select id="item-category" class="form-control" required></select>
+              </div>
+            </div>
+
+            <div class="form-grid-2" style="margin-bottom:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="item-date">Lost Date <span class="required-mark">*</span></label>
+                <input type="date" id="item-date" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="item-location">Lost Location <span class="required-mark">*</span></label>
+                <select id="item-location" class="form-control" required></select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label class="form-label" for="item-spot">Specific Spot or Room (Optional)</label>
+              <input type="text" id="item-spot" class="form-control" placeholder="e.g. 2nd floor reading table near window">
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label class="form-label" for="item-description">Description <span class="required-mark">*</span></label>
+              <textarea id="item-description" class="form-control" required placeholder="Mention color, brand, stickers, scratches, or contents inside..."></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label class="form-label" for="item-image">Upload Item Photo (Optional)</label>
+              <div id="upload-dropzone" class="upload-box">
+                <span class="material-symbols-outlined" style="font-size:30px;color:var(--primary);">add_a_photo</span>
+                <div style="font-weight:600;font-size:0.9rem;margin-top:0.3rem;">Click to choose an image file</div>
+                <div class="form-hint">PNG, JPG or SVG reference image</div>
+              </div>
+              <input type="file" id="item-image" accept="image/*" class="sr-only">
+              <div id="image-preview-wrap"></div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.5rem;">
+              <span class="form-label">Contact Preference <span class="required-mark">*</span></span>
+              <div class="radio-group">
+                <label class="radio-card">
+                  <input type="radio" name="contactPreference" value="Campus Email" checked>
+                  <span>Campus Email</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="contactPreference" value="Phone / SMS">
+                  <span>Phone / SMS</span>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="contactPreference" value="In-App Notification">
+                  <span>In-App Alert</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-wrap:wrap;gap:0.75rem;">
+              <button type="submit" class="btn btn-primary btn-lg">Submit Lost Report</button>
+              <a href="./lost-items.html" class="btn btn-outline btn-lg">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/items.js"></script>
+  <script defer src="../js/reports.js"></script>
+  <script defer src="../js/app.js"></script>
+</body>
+</html>

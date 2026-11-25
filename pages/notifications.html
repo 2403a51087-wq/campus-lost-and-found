@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications — Campus Lost &amp; Found</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="notifications">
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Notifications</h1>
+          <p class="page-subtitle">Stay updated on claim requests, approvals, status changes, and item matches.</p>
+        </div>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <button type="button" id="mark-all-read-btn" class="btn btn-secondary btn-sm">Mark All as Read</button>
+          <button type="button" id="clear-all-notifs-btn" class="btn btn-danger btn-sm">Clear All</button>
+        </div>
+      </div>
+
+      <section id="notifications-list" class="list-stack" aria-live="polite"></section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/items.js"></script>
+  <script defer src="../js/reports.js"></script>
+  <script defer src="../js/app.js"></script>
+</body>
+</html>

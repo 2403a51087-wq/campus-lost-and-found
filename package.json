@@ -1,0 +1,28 @@
+{
+  "name": "campus-lost-found",
+  "version": "1.0.0",
+  "description": "Campus Lost and Found Management Portal - A B.Tech college full-stack web project built with HTML5, CSS3, Vanilla JavaScript, Vite, and Express.js.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server.js",
+    "start": "concurrently -n \"SERVER,VITE\" -c \"blue,green\" \"node server.js\" \"vite\""
+  },
+  "keywords": [
+    "campus",
+    "lost-and-found",
+    "college-project",
+    "express",
+    "vite"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "vite": "^6.2.0"
+  }
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Lost &amp; Found Management Portal</title>
+  <link rel="icon" href="./assets/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body data-page="home">
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <span class="hero-badge">
+          <span class="material-symbols-outlined" style="font-size:16px;">verified</span>
+          Official Campus Recovery Service
+        </span>
+        <h1 class="hero-title">Lost Something on Campus?</h1>
+        <p class="hero-subtitle">
+          Find your missing belongings or help someone recover theirs.
+        </p>
+
+        <form id="hero-search-form" class="hero-search-form" role="search">
+          <select id="hero-search-type" class="form-control" aria-label="Search category" style="width:auto;border:none;background:var(--surface-low);font-weight:600;">
+            <option value="lost">Lost Items</option>
+            <option value="found">Found Items</option>
+          </select>
+          <input
+            type="search"
+            id="hero-search-input"
+            class="hero-search-input"
+            placeholder="Search wallet, earbuds, student ID, water bottle..."
+            aria-label="Search items"
+          >
+          <button type="submit" class="btn btn-primary">
+            <span class="material-symbols-outlined" style="font-size:18px;">search</span>
+            Search
+          </button>
+        </form>
+
+        <div class="hero-cta-group">
+          <a href="./pages/lost-items.html" class="btn btn-hero-light btn-lg">
+            <span class="material-symbols-outlined" style="font-size:20px;">search</span>
+            Browse Lost Items
+          </a>
+          <a href="./pages/found-items.html" class="btn btn-hero-glass btn-lg">
+            <span class="material-symbols-outlined" style="font-size:20px;">inventory_2</span>
+            Browse Found Items
+          </a>
+          <button type="button" id="open-report-choice-btn" class="btn btn-hero-glass btn-lg">
+            <span class="material-symbols-outlined" style="font-size:20px;">add_circle</span>
+            Report an Item
+          </button>
+        </div>
+      </section>
+
+      <!-- Statistics Cards -->
+      <section aria-label="Portal statistics" class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon lost">
+            <span class="material-symbols-outlined">search_off</span>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-lost-count">0</div>
+            <div class="stat-label">Reported Lost Items</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon found">
+            <span class="material-symbols-outlined">inventory_2</span>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-found-count">0</div>
+            <div class="stat-label">Found Items Logged</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon resolved">
+            <span class="material-symbols-outlined">task_alt</span>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-resolved-count">0</div>
+            <div class="stat-label">Reunited &amp; Resolved</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon pending">
+            <span class="material-symbols-outlined">pending_actions</span>
+          </div>
+          <div>
+            <div class="stat-value" id="stat-pending-count">0</div>
+            <div class="stat-label">Pending Verification</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recently Lost Items -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="material-symbols-outlined" style="color:var(--danger);">error</span>
+            Recently Lost Items
+          </h2>
+          <a href="./pages/lost-items.html" class="section-link">
+            View all lost items
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+          </a>
+        </div>
+        <div id="recent-lost-grid" class="items-grid"></div>
+      </section>
+
+      <!-- Recently Found Items -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="material-symbols-outlined" style="color:var(--success);">check_circle</span>
+            Recently Found Items
+          </h2>
+          <a href="./pages/found-items.html" class="section-link">
+            View all found items
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+          </a>
+        </div>
+        <div id="recent-found-grid" class="items-grid"></div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="section-surface">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">How It Works</h2>
+            <p class="page-subtitle">A simple 3-step campus recovery workflow</p>
+          </div>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <h3>Report or Search Item</h3>
+            <p>Submit a lost or found report with campus location and photo, or search the live campus directory.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <h3>Verify Ownership</h3>
+            <p>Submit a claim request with distinguishing details, serial numbers, or unique markings for verification.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <h3>Safe Campus Handover</h3>
+            <p>Once approved, collect your belonging from the Security Desk or listed holding office with your Student ID.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Quick Report Choice Modal -->
+  <div class="modal-backdrop" id="report-choice-modal">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="report-choice-title">
+      <div class="modal-header">
+        <h2 class="modal-title" id="report-choice-title">What would you like to report?</h2>
+        <button type="button" class="icon-btn" id="close-report-choice-btn" aria-label="Close">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="form-grid-2">
+        <a href="./pages/report-lost.html" class="card" style="text-align:center;">
+          <span class="material-symbols-outlined" style="font-size:34px;color:var(--danger);margin-bottom:0.5rem;">search_off</span>
+          <h3 style="margin:0 0 0.35rem;font-size:1rem;">I Lost an Item</h3>
+          <p class="form-hint" style="margin:0;">Create a lost property alert across campus</p>
+        </a>
+        <a href="./pages/report-found.html" class="card" style="text-align:center;">
+          <span class="material-symbols-outlined" style="font-size:34px;color:var(--success);margin-bottom:0.5rem;">volunteer_activism</span>
+          <h3 style="margin:0 0 0.35rem;font-size:1rem;">I Found an Item</h3>
+          <p class="form-hint" style="margin:0;">Log a found belonging to help return it</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script defer src="./js/storage.js"></script>
+  <script defer src="./js/auth.js"></script>
+  <script defer src="./js/items.js"></script>
+  <script defer src="./js/reports.js"></script>
+  <script defer src="./js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var openBtn = document.getElementById('open-report-choice-btn');
+      var closeBtn = document.getElementById('close-report-choice-btn');
+      var modal = document.getElementById('report-choice-modal');
+      if (openBtn && modal) {
+        openBtn.addEventListener('click', function () { modal.classList.add('open'); });
+      }
+      if (closeBtn && modal) {
+        closeBtn.addEventListener('click', function () { modal.classList.remove('open'); });
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) modal.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

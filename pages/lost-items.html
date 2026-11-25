@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost Items Directory — Campus Lost &amp; Found</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="lost-items">
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Lost Items Directory</h1>
+          <p class="page-subtitle">Browse missing belongings reported across campus buildings.</p>
+        </div>
+        <a href="./report-lost.html" class="btn btn-primary">
+          <span class="material-symbols-outlined" style="font-size:18px;">add_circle</span>
+          Report Lost Item
+        </a>
+      </div>
+
+      <section class="filter-panel" aria-label="Filter lost items">
+        <div class="filter-grid">
+          <div class="form-group">
+            <label class="form-label" for="filter-search">Search</label>
+            <input type="search" id="filter-search" class="form-control" placeholder="Search item name, description, ID...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="filter-category">Category</label>
+            <select id="filter-category" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="filter-location">Location</label>
+            <select id="filter-location" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="filter-date">Date</label>
+            <select id="filter-date" class="form-control">
+              <option value="all">Any Time</option>
+              <option value="today">Today</option>
+              <option value="week">Last 7 Days</option>
+              <option value="month">Last 30 Days</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="filter-sort">Sort By</label>
+            <select id="filter-sort" class="form-control">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="name">Name (A–Z)</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:0.9rem;padding-top:0.85rem;border-top:1px solid var(--border-color);">
+          <span id="results-count" class="form-hint" style="font-weight:600;">Loading lost items...</span>
+          <button type="button" id="reset-filters-btn" class="btn btn-outline btn-sm">Reset Filters</button>
+        </div>
+      </section>
+
+      <section id="items-grid" class="items-grid" aria-live="polite"></section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/items.js"></script>
+  <script defer src="../js/reports.js"></script>
+  <script defer src="../js/app.js"></script>
+</body>
+</html>

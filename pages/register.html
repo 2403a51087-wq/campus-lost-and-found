@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Campus Lost &amp; Found</title>
+  <link rel="icon" href="../assets/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="register">
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="auth-wrapper" style="max-width:520px;">
+        <div class="auth-header">
+          <div class="auth-icon">
+            <span class="material-symbols-outlined" style="font-size:28px;">verified_user</span>
+          </div>
+          <h1 class="page-title">Create Student Account</h1>
+          <p class="page-subtitle">Register with your college details to report and claim campus items.</p>
+        </div>
+
+        <div class="card">
+          <div id="register-alert"></div>
+          <form id="register-form" novalidate>
+            <div class="form-group" style="margin-bottom:0.9rem;">
+              <label class="form-label" for="reg-name">Full Name <span class="required-mark">*</span></label>
+              <input type="text" id="reg-name" class="form-control" required placeholder="e.g. Rohan Verma">
+            </div>
+
+            <div class="form-group" style="margin-bottom:0.9rem;">
+              <label class="form-label" for="reg-email">College Email <span class="required-mark">*</span></label>
+              <input type="email" id="reg-email" class="form-control" required placeholder="name@college.edu">
+            </div>
+
+            <div class="form-grid-2" style="margin-bottom:0.9rem;">
+              <div class="form-group">
+                <label class="form-label" for="reg-student-id">Student ID <span class="required-mark">*</span></label>
+                <input type="text" id="reg-student-id" class="form-control" required placeholder="BT2024CS102">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-department">Department <span class="required-mark">*</span></label>
+                <select id="reg-department" class="form-control" required>
+                  <option value="">Select Department</option>
+                  <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Electronics & Communication">Electronics &amp; Communication</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Business & Management">Business &amp; Management</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:0.9rem;">
+              <label class="form-label" for="reg-password">Password <span class="required-mark">*</span></label>
+              <div class="input-icon-wrap">
+                <input type="password" id="reg-password" class="form-control has-toggle" required minlength="6" placeholder="Minimum 6 characters">
+                <button type="button" class="password-toggle js-toggle-pwd" data-target="reg-password" aria-label="Show or hide password">
+                  <span class="material-symbols-outlined" style="font-size:20px;">visibility</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1.25rem;">
+              <label class="form-label" for="reg-confirm-password">Confirm Password <span class="required-mark">*</span></label>
+              <div class="input-icon-wrap">
+                <input type="password" id="reg-confirm-password" class="form-control has-toggle" required minlength="6" placeholder="Repeat password">
+                <button type="button" class="password-toggle js-toggle-pwd" data-target="reg-confirm-password" aria-label="Show or hide confirm password">
+                  <span class="material-symbols-outlined" style="font-size:20px;">visibility</span>
+                </button>
+              </div>
+              <span id="reg-match-hint" class="form-hint"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Register &amp; Sign In</button>
+          </form>
+
+          <p style="text-align:center;margin:1.25rem 0 0;font-size:0.88rem;color:var(--on-surface-variant);">
+            Already have an account?
+            <a href="./login.html" style="color:var(--secondary);font-weight:600;">Login here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script defer src="../js/storage.js"></script>
+  <script defer src="../js/auth.js"></script>
+  <script defer src="../js/items.js"></script>
+  <script defer src="../js/reports.js"></script>
+  <script defer src="../js/app.js"></script>
+</body>
+</html>
