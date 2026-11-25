@@ -22,6 +22,7 @@ export default defineConfig({
   plugins: [copyPublicFolderPlugin()],
   server: {
     port: 5173,
+    allowedHosts: true,
     open: false,
     proxy: {
       '/api': {
