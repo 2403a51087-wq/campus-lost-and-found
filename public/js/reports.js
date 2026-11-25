@@ -30,14 +30,14 @@
 
   function getDefaultImageForCategory(category) {
     const map = {
-      'Electronics': 'assets/images/earbuds.svg',
-      'ID & Cards': 'assets/images/student-id.svg',
-      'Wallets & Bags': 'assets/images/backpack.svg',
-      'Books & Stationery': 'assets/images/notebook.svg',
-      'Accessories': 'assets/images/water-bottle.svg',
-      'Keys & Other': 'assets/images/keys.svg'
+      'Electronics': 'public/assets/images/earbuds.svg',
+      'ID & Cards': 'public/assets/images/student-id.svg',
+      'Wallets & Bags': 'public/assets/images/backpack.svg',
+      'Books & Stationery': 'public/assets/images/notebook.svg',
+      'Accessories': 'public/assets/images/water-bottle.svg',
+      'Keys & Other': 'public/assets/images/keys.svg'
     };
-    return map[category] || 'assets/images/placeholder-item.svg';
+    return map[category] || 'public/assets/images/placeholder-item.svg';
   }
 
   function initReportForm(type) {
@@ -200,7 +200,7 @@
       listEl.innerHTML = filtered
         .map(function (item) {
           const isResolved = item.status === 'Resolved' || item.status === 'Claimed';
-          const thumbUrl = Storage.resolveUrl(item.image || 'assets/images/placeholder-item.svg');
+          const thumbUrl = Storage.resolveUrl(item.image || 'public/assets/images/placeholder-item.svg');
           const detailUrl = Storage.resolveUrl('pages/item-details.html') + '?id=' + encodeURIComponent(item.id);
 
           return (
@@ -656,7 +656,7 @@
       const user = Auth.getCurrentUser();
       if (!user) return;
       document.getElementById('profile-avatar-img').src = Storage.resolveUrl(
-        user.avatar || 'assets/images/avatar-student.svg'
+        user.avatar || 'public/assets/images/avatar-student.svg'
       );
       document.getElementById('profile-name-display').textContent = user.name;
       document.getElementById('profile-email-display').textContent = user.email;

@@ -26,7 +26,8 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Serve static assets from /public (maps /css/*, /js/*, /assets/*)
+// Serve static assets from /public at both /public and root
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve subpages from /pages (maps /pages/*.html)

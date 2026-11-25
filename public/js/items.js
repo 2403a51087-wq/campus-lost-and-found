@@ -35,7 +35,7 @@
   function renderItemCard(item, options) {
     const opts = options || {};
     const detailsUrl = Storage.resolveUrl('pages/item-details.html') + '?id=' + encodeURIComponent(item.id);
-    const imgUrl = Storage.resolveUrl(item.image || 'assets/images/placeholder-item.svg');
+    const imgUrl = Storage.resolveUrl(item.image || 'public/assets/images/placeholder-item.svg');
     const typeLabel = item.type === 'lost' ? 'Lost' : 'Found';
     const showClaimBtn =
       opts.showClaimButton && item.type === 'found' && item.status !== 'Claimed' && item.status !== 'Resolved';
@@ -304,7 +304,7 @@
     const dateLabel = item.type === 'lost' ? 'Lost Date' : 'Found Date';
     const locLabel = item.type === 'lost' ? 'Lost Location' : 'Found Location';
     const isResolved = item.status === 'Resolved' || item.status === 'Claimed';
-    const imgUrl = Storage.resolveUrl(item.image || 'assets/images/placeholder-item.svg');
+    const imgUrl = Storage.resolveUrl(item.image || 'public/assets/images/placeholder-item.svg');
 
     let actionButtonHtml = '';
     if (!isResolved) {

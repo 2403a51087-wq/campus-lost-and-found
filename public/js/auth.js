@@ -75,7 +75,7 @@
       department: details.department.trim(),
       phone: details.phone ? details.phone.trim() : '',
       password: details.password, // Demo only
-      avatar: 'assets/images/avatar-student.svg',
+      avatar: 'public/assets/images/avatar-student.svg',
       createdAt: new Date().toISOString().split('T')[0]
     };
 

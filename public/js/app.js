@@ -95,7 +95,7 @@
           Storage.resolveUrl('pages/profile.html') +
           '" class="user-pill" title="Student Profile">' +
           '<img src="' +
-          Items.escapeHTML(Storage.resolveUrl(user.avatar || 'assets/images/avatar-student.svg')) +
+          Items.escapeHTML(Storage.resolveUrl(user.avatar || 'public/assets/images/avatar-student.svg')) +
           '" alt="' +
           Items.escapeHTML(user.name) +
           '">' +
@@ -119,7 +119,7 @@
         Storage.resolveUrl('index.html') +
         '" class="brand">' +
         '<img src="' +
-        Storage.resolveUrl('assets/images/logo.svg') +
+        Storage.resolveUrl('public/assets/images/logo.svg') +
         '" alt="Campus Lost & Found Logo" class="brand-logo">' +
         '<div class="brand-text">' +
         '<span class="brand-title">Campus Lost &amp; Found</span>' +
@@ -172,7 +172,7 @@
         '<div>' +
         '<div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.75rem;">' +
         '<img src="' +
-        Storage.resolveUrl('assets/images/logo.svg') +
+        Storage.resolveUrl('public/assets/images/logo.svg') +
         '" alt="Campus Lost & Found" style="width:32px;height:32px;border-radius:8px;">' +
         '<strong style="font-size:1.05rem;">Campus Lost &amp; Found Portal</strong>' +
         '</div>' +

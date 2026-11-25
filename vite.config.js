@@ -1,10 +1,25 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { cpSync, existsSync } from 'fs';
+
+function copyPublicFolderPlugin() {
+  return {
+    name: 'copy-public-folder',
+    closeBundle() {
+      const src = resolve(__dirname, 'public');
+      const dest = resolve(__dirname, 'dist/public');
+      if (existsSync(src)) {
+        cpSync(src, dest, { recursive: true });
+      }
+    }
+  };
+}
 
 export default defineConfig({
   base: './',
   root: '.',
-  publicDir: 'public',
+  publicDir: false,
+  plugins: [copyPublicFolderPlugin()],
   server: {
     port: 5173,
     open: false,
