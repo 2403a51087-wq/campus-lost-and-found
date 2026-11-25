@@ -1,6 +1,6 @@
 # Campus Lost and Found Management Portal
 
-**Live Website:** https://2403a51087-wq.github.io/sesd-project/
+**Live Website:** https://2403a51087-wq.github.io/campus-lost-and-found/
 
 A clean, responsive B.Tech college project built with **HTML5, CSS3, Vanilla JavaScript, Vite, and Express.js**, styled after the Google Stitch *Campus Lost & Found Portal* design system.
 
